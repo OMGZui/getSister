@@ -11,6 +11,7 @@
     - [ch06 Errors and Exceptions](#ch06-errors-and-exceptions)
     - [ch07 Classes](#ch07-classes)
     - [ch08 Brief Tour of the Standard Library](#ch08-brief-tour-of-the-standard-library)
+    - [ch09 spider](#ch09-spider)
 
 <!-- /TOC -->
 
@@ -45,3 +46,7 @@ python 类与对象
 ## ch08 Brief Tour of the Standard Library
 
 python 标准库
+
+## ch09 spider
+
+python 爬虫
