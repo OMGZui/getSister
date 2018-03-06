@@ -10,7 +10,7 @@ import pandas
 # 统计
 import numpy
 
-with request.urlopen('https://movie.douban.com/nowplaying/hangzhou/') as f:
+with request.urlopen(r'https://movie.douban.com/nowplaying/hangzhou/') as f:
     data = f.read().decode('utf-8')
 # print(html)
 
