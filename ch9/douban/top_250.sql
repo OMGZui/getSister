@@ -1,0 +1,10 @@
+CREATE TABLE `top_250` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `title` varchar(50) CHARACTER SET utf8 NOT NULL DEFAULT '0' COMMENT '标题',
+  `link` varchar(255) CHARACTER SET utf8 NOT NULL DEFAULT '0' COMMENT '链接',
+  `img` varchar(255) CHARACTER SET utf8 NOT NULL DEFAULT '0' COMMENT '图片',
+  `rate` varchar(8) CHARACTER SET utf8 NOT NULL DEFAULT '0' COMMENT '评分',
+  `num` varchar(8) CHARACTER SET utf8 NOT NULL DEFAULT '0' COMMENT '评分人数',
+  `quote` varchar(200) CHARACTER SET utf8 NOT NULL DEFAULT '0' COMMENT '点评',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin COMMENT='电影排行top250';
