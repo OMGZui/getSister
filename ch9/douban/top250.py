@@ -12,17 +12,17 @@ def transfer_content(content):
     if content is None:
         return None
     else:
-        string = ""
+        _str = ""
         for c in content:
             if c == '"':
-                string += '\\\"'
+                _str += '\\\"'
             elif c == "'":
-                string += "\\\'"
+                _str += "\\\'"
             elif c == "\\":
-                string += "\\\\"
+                _str += "\\\\"
             else:
-                string += c
-        return string
+                _str += c
+        return _str
 
 
 # 打开数据库连接
@@ -51,18 +51,18 @@ for i in range(10):
         link = hd.a.get('href')
 
         bd = item.find('div', class_='bd')
-        rate = bd.div.find_all('span')[1].string
+        rate = float(bd.div.find_all('span')[1].string)
         num = bd.div.find_all('span')[3].string
-        num = num[0:-3]
+        num = int(num[0:-3])
         quote = transfer_content(bd.find_all('p')[1].span.string)
 
         # SQL 插入语句
         sql = " insert into top_250 (`title`, `link`, `img`, `rate`, `num`, `quote`) values " \
-              "('%s', '%s', '%s', '%s', '%s', '%s')" % \
+              "('%s', '%s', '%s', '%.2f', '%d', '%s')" % \
               (title, link, img, rate, num, quote)
         cursor.execute(sql)
         db.commit()
-        print("正在存入第%d页--《%s》" % (i + 1, title))
+        print("正在存入第%d页 --《%s》-- %.2f" % (i + 1, title, rate))
 
 # 关闭数据库连接
 db.close()
